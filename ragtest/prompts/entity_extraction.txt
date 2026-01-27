@@ -1,0 +1,170 @@
+
+-Goal-
+Given a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.
+
+-Steps-
+1. Identify all entities. For each identified entity, extract the following information:
+- entity_name: Name of the entity, capitalized
+- entity_type: One of the following types: [publisher, author, editor, peer reviewer, AI technology, journal, policy, guideline, organization, tool, algorithm, copyright, transparency, accountability, ethical use, authorship, publication process, peer review process, manuscript, content, data, research, integrity, originality, plagiarism, bias, inaccuracy, hallucination, language model, generative AI, LLM, copyright holder, editorial decision, submission, disclosure, rights protection, confidentiality, privacy, compliance, citation, source, manuscript preparation, research design, academic publishing, AI policy]
+- entity_description: Comprehensive description of the entity's attributes and activities
+Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>)
+
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+For each pair of related entities, extract the following information:
+- source_entity: name of the source entity, as identified in step 1
+- target_entity: name of the target entity, as identified in step 1
+- relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+- relationship_strength: an integer score between 1 to 10, indicating strength of the relationship between the source entity and target entity
+Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+
+3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+
+4. If you have to translate into English, just translate the descriptions, nothing else!
+
+5. When finished, output {completion_delimiter}.
+
+-Examples-
+######################
+
+Example 1:
+
+entity_types: [publisher, author, editor, peer reviewer, AI technology, journal, policy, guideline, organization, tool, algorithm, copyright, transparency, accountability, ethical use, authorship, publication process, peer review process, manuscript, content, data, research, integrity, originality, plagiarism, bias, inaccuracy, hallucination, language model, generative AI, LLM, copyright holder, editorial decision, submission, disclosure, rights protection, confidentiality, privacy, compliance, citation, source, manuscript preparation, research design, academic publishing, AI policy]
+text:
+.
+Publishers should take steps to be transparent about which of their publishing processes or workflows are automated, and where AI decisions are involved. Any AI powered automation should be clearly presented to the relevant participants of the peer review process—authors, reviewers, or editors—with clarification on how the algorithm provided the result or conclusion.
+For authors
+Authors can challenge an editorial decision, if they have a valid reason, in accordance with the journal’s standard procedures. Challenging an editorial decision that was made by AI or based on an AI recommendation should follow the same process as any editorial decision made by a human. Whether the decision was made by AI or a human editor, the journal and publisher are accountable for the editorial decision. 
+Sound arguments should be presented by the authors to the journal editors or the publisher management team to highlight the ways in which the decision making process was flawed, if treatment was unfair, or if discrimination was noticed. 
+Authors also
+------------------------
+output:
+("entity"{tuple_delimiter}PUBLISHER{tuple_delimiter}publisher{tuple_delimiter}The entity responsible for managing the publication process of academic works, including decisions made by AI or human editors")
+{record_delimiter}
+("entity"{tuple_delimiter}JOURNAL{tuple_delimiter}journal{tuple_delimiter}A periodical publication that disseminates scholarly research, often involving peer review and editorial decisions")
+{record_delimiter}
+("entity"{tuple_delimiter}AUTHOR{tuple_delimiter}author{tuple_delimiter}An individual who conducts research and prepares manuscripts for submission to journals")
+{record_delimiter}
+("entity"{tuple_delimiter}EDITOR{tuple_delimiter}editor{tuple_delimiter}A person responsible for overseeing the editorial process of a journal, including making decisions on manuscript acceptance")
+{record_delimiter}
+("entity"{tuple_delimiter}PEER REVIEWER{tuple_delimiter}peer reviewer{tuple_delimiter}A researcher who evaluates the quality and validity of a manuscript during the peer review process")
+{record_delimiter}
+("entity"{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}AI technology{tuple_delimiter}Systems that use artificial intelligence to automate parts of the publishing or review process")
+{record_delimiter}
+("entity"{tuple_delimiter}ALGORITHM{tuple_delimiter}algorithm{tuple_delimiter}A set of rules or instructions used by AI systems to make decisions or generate results")
+{record_delimiter}
+("entity"{tuple_delimiter}TRANSPARENCY{tuple_delimiter}transparency{tuple_delimiter}The practice of clearly disclosing how AI systems are used in the publishing process")
+{record_delimiter}
+("entity"{tuple_delimiter}ACCOUNTABILITY{tuple_delimiter}accountability{tuple_delimiter}The responsibility of publishers and journals to ensure that editorial decisions—whether made by AI or humans—are just and fair")
+{record_delimiter}
+("entity"{tuple_delimiter}EDITORIAL DECISION{tuple_delimiter}editorial decision{tuple_delimiter}A decision made by an editor regarding the acceptance or rejection of a manuscript")
+{record_delimiter}
+("entity"{tuple_delimiter}PEER REVIEW PROCESS{tuple_delimiter}peer review process{tuple_delimiter}The process by which manuscripts are evaluated by independent experts before publication")
+{record_delimiter}
+("entity"{tuple_delimiter}MANUSCRIPT{tuple_delimiter}manuscript{tuple_delimiter}A written work submitted for publication in a journal")
+{record_delimiter}
+("entity"{tuple_delimiter}PUBLICATION PROCESS{tuple_delimiter}publication process{tuple_delimiter}The series of steps involved in preparing and releasing a scholarly work for public dissemination")
+{record_delimiter}
+("entity"{tuple_delimiter}AI POLICY{tuple_delimiter}AI policy{tuple_delimiter}Guidelines or regulations governing the use of AI in academic publishing and related processes")
+{record_delimiter}
+("relationship"{tuple_delimiter}PUBLISHER{tuple_delimiter}TRANSPARENCY{tuple_delimiter}Publishers are required to ensure transparency in their publishing processes, especially when AI is involved{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}PUBLISHER{tuple_delimiter}ACCOUNTABILITY{tuple_delimiter}Publishers are accountable for editorial decisions, whether made by AI or human editors{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}PUBLISHER{tuple_delimiter}JOURNAL{tuple_delimiter}Publishers manage the operations of journals, including editorial decisions and peer review processes{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}JOURNAL{tuple_delimiter}EDITORIAL DECISION{tuple_delimiter}Journals make editorial decisions about manuscript acceptance or rejection{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}EDITOR{tuple_delimiter}EDITORIAL DECISION{tuple_delimiter}Editors make editorial decisions regarding manuscripts{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}PEER REVIEWER{tuple_delimiter}PEER REVIEW PROCESS{tuple_delimiter}Peer reviewers participate in the peer review process by evaluating manuscripts{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}ALGORITHM{tuple_delimiter}AI technology relies on algorithms to make decisions or generate results{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}PUBLICATION PROCESS{tuple_delimiter}AI technology may be used to automate parts of the publication process{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}AUTHOR{tuple_delimiter}MANUSCRIPT{tuple_delimiter}Authors prepare manuscripts for submission to journals{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}AUTHOR{tuple_delimiter}EDITORIAL DECISION{tuple_delimiter}Authors can challenge editorial decisions made by editors or AI systems{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}AUTHOR{tuple_delimiter}PEER REVIEW PROCESS{tuple_delimiter}Authors are affected by the peer review process, as their manuscripts are evaluated by reviewers{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}PEER REVIEW PROCESS{tuple_delimiter}AI technology may be used in the peer review process to support or automate certain tasks{tuple_delimiter}6)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI POLICY{tuple_delimiter}PUBLISHER{tuple_delimiter}AI policies guide how publishers should handle the use of AI in their processes{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI POLICY{tuple_delimiter}JOURNAL{tuple_delimiter}AI policies apply to journals, ensuring ethical and transparent use of AI in publishing{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI POLICY{tuple_delimiter}EDITORIAL DECISION{tuple_delimiter}AI policies govern how editorial decisions involving AI are handled{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI POLICY{tuple_delimiter}ACCOUNTABILITY{tuple_delimiter}AI policies emphasize accountability for editorial decisions made by AI systems{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI POLICY{tuple_delimiter}TRANSPARENCY{tuple_delimiter}AI policies require transparency in the use of AI in publishing processes{tuple_delimiter}9)
+{completion_delimiter}
+#############################
+
+
+Example 2:
+
+entity_types: [publisher, author, editor, peer reviewer, AI technology, journal, policy, guideline, organization, tool, algorithm, copyright, transparency, accountability, ethical use, authorship, publication process, peer review process, manuscript, content, data, research, integrity, originality, plagiarism, bias, inaccuracy, hallucination, language model, generative AI, LLM, copyright holder, editorial decision, submission, disclosure, rights protection, confidentiality, privacy, compliance, citation, source, manuscript preparation, research design, academic publishing, AI policy]
+text:
+ submission to a Wiley journal. If not provided, this may be requested during the submission and peer review process, or after publication. Transparency is essential to Wiley's commitment to ethical publishing and integrity. (Please see the additional, specific guidance regarding authorship and disclosure below.)
+
+Rights Protection
+Authors must not use any AI Technology that restricts their own, Wiley’s, or any other party’s use of the submission. This includes ensuring that the AI Technology used and the provider of that AI Technology does not gain any rights over the author’s underlying content, including the right to “train” their AI Technology on the content, besides the limited right to access and use the submission to perform the service. By reviewing an AI Technology’s terms and conditions for clauses such as “ownership,” “data reuse,” or “opt out” among others, authors can prevent unintended rights transfers.
+
+Responsible and Ethical Use
+Authors must use AI Technology in a manner that aligns with privacy, confidentiality, and compliance obligations
+------------------------
+output:
+("entity"{tuple_delimiter}WILEY{tuple_delimiter}PUBLISHER{tuple_delimiter}Wiley is a publisher of academic journals and is committed to ethical publishing and integrity)
+{record_delimiter}
+("entity"{tuple_delimiter}AUTHOR{tuple_delimiter}AUTHOR{tuple_delimiter}An individual who writes and submits research for publication, and must adhere to Wiley's policies on AI use and disclosure)
+{record_delimiter}
+("entity"{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}A system or tool that uses artificial intelligence to assist in writing, editing, or generating content, which authors must disclose and use responsibly)
+{record_delimiter}
+("entity"{tuple_delimiter}TRANSPARENCY{tuple_delimiter}TRANSPARENCY{tuple_delimiter}A principle emphasized by Wiley to ensure ethical publishing and integrity, requiring authors to disclose the use of AI technology)
+{record_delimiter}
+("entity"{tuple_delimiter}ETHICAL USE{tuple_delimiter}ETHICAL USE{tuple_delimiter}The responsible and appropriate application of AI technology by authors, aligned with privacy, confidentiality, and compliance obligations)
+{record_delimiter}
+("entity"{tuple_delimiter}RIGHTS PROTECTION{tuple_delimiter}POLICY{tuple_delimiter}A policy set by Wiley that requires authors to ensure AI technology does not restrict their or Wiley's rights over the submission)
+{record_delimiter}
+("entity"{tuple_delimiter}PEER REVIEW PROCESS{tuple_delimiter}PEER REVIEW PROCESS{tuple_delimiter}The process through which manuscripts are evaluated by experts before publication, which may request additional information about AI use)
+{record_delimiter}
+("entity"{tuple_delimiter}SUBMISSION{tuple_delimiter}MANUSCRIPT{tuple_delimiter}A manuscript submitted to a Wiley journal, which may require disclosure of AI technology use during the submission or peer review process)
+{record_delimiter}
+("entity"{tuple_delimiter}AUTHORSHIP{tuple_delimiter}GUIDELINE{tuple_delimiter}A guideline related to authorship and disclosure, which is part of Wiley's commitment to transparency and integrity)
+{record_delimiter}
+("entity"{tuple_delimiter}DISCLOSURE{tuple_delimiter}DISCLOSURE{tuple_delimiter}A requirement for authors to reveal the use of AI technology in their submissions, as part of Wiley's ethical publishing standards)
+{record_delimiter}
+("entity"{tuple_delimiter}COPYRIGHT HOLDER{tuple_delimiter}ORGANIZATION{tuple_delimiter}The entity that holds the copyright to the submission, which may be the author or Wiley, depending on the agreement)
+{record_delimiter}
+("relationship"{tuple_delimiter}WILEY{tuple_delimiter}TRANSPARENCY{tuple_delimiter}Wiley emphasizes transparency as part of its commitment to ethical publishing and integrity{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}WILEY{tuple_delimiter}RIGHTS PROTECTION{tuple_delimiter}Wiley has established a policy on rights protection to ensure authors do not transfer unintended rights to AI technology providers{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}WILEY{tuple_delimiter}ETHICAL USE{tuple_delimiter}Wiley requires authors to use AI technology in an ethical manner that aligns with privacy, confidentiality, and compliance obligations{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}AUTHOR{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}Authors must disclose the use of AI technology in their submissions and ensure it does not restrict their rights{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}AUTHOR{tuple_delimiter}SUBMISSION{tuple_delimiter}Authors submit manuscripts to Wiley journals, which may require disclosure of AI technology use{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}AUTHOR{tuple_delimiter}DISCLOSURE{tuple_delimiter}Authors are required to provide disclosure regarding the use of AI technology in their submissions{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}AI TECHNOLOGY{tuple_delimiter}RIGHTS PROTECTION{tuple_delimiter}AI technology must not restrict the rights of the author or Wiley over the submission{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}PEER REVIEW PROCESS{tuple_delimiter}SUBMISSION{tuple_delimiter}The peer review process may request additional information about AI technology use during or after submission{tuple_delimiter}6)
+{record_delimiter}
+("relationship"{tuple_delimiter}AUTHORSHIP{tuple_delimiter}DISCLOSURE{tuple_delimiter}Authorship guidelines require authors to disclose the use of AI technology in their work{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}COPYRIGHT HOLDER{tuple_delimiter}RIGHTS PROTECTION{tuple_delimiter}The copyright holder must ensure that AI technology does not infringe on their rights or those of Wiley{tuple_delimiter}6)
+{completion_delimiter}
+#############################
+
+
+
+-Real Data-
+######################
+entity_types: [publisher, author, editor, peer reviewer, AI technology, journal, policy, guideline, organization, tool, algorithm, copyright, transparency, accountability, ethical use, authorship, publication process, peer review process, manuscript, content, data, research, integrity, originality, plagiarism, bias, inaccuracy, hallucination, language model, generative AI, LLM, copyright holder, editorial decision, submission, disclosure, rights protection, confidentiality, privacy, compliance, citation, source, manuscript preparation, research design, academic publishing, AI policy]
+text: {input_text}
+######################
+output:
