@@ -1,0 +1,452 @@
+[
+    {
+        "query_id": "Q001",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "Elsevier 出版社是否允许将生成式 AI 列为论文的合著者？",
+        "ground_truth_answer": "Elsevier 明确禁止将任何生成式 AI 或大语言模型列为论文的作者或合著者，因为作者身份隐含着对研究完整性的责任，而 AI 无法承担此责任。",
+        "required_entities": ["Elsevier", "authorship", "prohibit", "accountability"],
+        "supporting_triples": [["Elsevier", "prohibits", "AI Authorship"]]
+    },
+    {
+        "query_id": "Q002",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "Springer Nature 对人工智能生成图像的基本政策是什么？",
+        "ground_truth_answer": "Springer Nature 通常禁止在未经明确许可的情况下发布由生成式 AI 创建的图像，以维护科学数据的真实性。",
+        "required_entities": ["Springer Nature", "Image Generation", "prohibit"],
+        "supporting_triples": [["Springer Nature", "prohibits", "Image Generation"]]
+    },
+    {
+        "query_id": "Q003",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "IEEE 政策是否允许使用人工智能工具进行代码生成？",
+        "ground_truth_answer": "IEEE 政策通常要求，若使用 AI 工具辅助生成代码，必须在论文中明确披露该使用情况。",
+        "required_entities": ["IEEE", "Code Generation", "disclosure"],
+        "supporting_triples": [["IEEE", "requires_disclosure_of", "AI Use"]]
+    },
+    {
+        "query_id": "Q004",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "Taylor & Francis 关于同行评审中使用 AI 的规定是什么？",
+        "ground_truth_answer": "Taylor & Francis 严禁审稿人将未发表的手稿上传至生成式 AI 工具，以防止违反保密协议。",
+        "required_entities": ["Taylor & Francis", "Peer Reviewer", "Uploading Manuscript", "prohibit"],
+        "supporting_triples": [["Taylor & Francis", "prohibits", "Uploading Manuscript to AI"]]
+    },
+    {
+        "query_id": "Q005",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "SAGE 出版社是否允许作者使用 AI 进行语言润色？",
+        "ground_truth_answer": "SAGE 允许作者使用 AI 工具提高学术文本的语言质量，但前提是作者必须对此类使用进行披露。",
+        "required_entities": ["SAGE", "Language Editing", "allow", "disclosure"],
+        "supporting_triples": [["SAGE", "allows", "Language Editing"]]
+    },
+    {
+        "query_id": "Q006",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "ICMJE 规范中，谁应当对论文的最终准确性负责？",
+        "ground_truth_answer": "根据 ICMJE 规范，人类作者（Human Author）必须对稿件所有部分的准确性和完整性承担全部最终责任。",
+        "required_entities": ["ICMJE", "Human Author", "accountability"],
+        "supporting_triples": [["ICMJE", "assigns_accountability_to", "Human Author"]]
+    },
+    {
+        "query_id": "Q007",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "COPE 对于 AI 工具能否承担知识产权责任的立场是什么？",
+        "ground_truth_answer": "COPE 明确指出 AI 工具没有法律地位，因此不能承担版权或知识产权纠纷的相关责任。",
+        "required_entities": ["COPE", "AI Tool", "liability"],
+        "supporting_triples": [["COPE", "states_no_legal_standing_for", "AI Tool"]]
+    },
+    {
+        "query_id": "Q008",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "Wiley 出版社是否允许 AI 被视为拥有版权的主体？",
+        "ground_truth_answer": "Wiley 不承认 AI 拥有版权主体资格，版权需由人类作者签署和转移。",
+        "required_entities": ["Wiley", "Copyright", "AI Tool"],
+        "supporting_triples": [["Wiley", "denies_copyright_for", "AI Tool"]]
+    },
+    {
+        "query_id": "Q009",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "JAMA 期刊群对在方法学部分使用 AI 有何要求？",
+        "ground_truth_answer": "JAMA 要求，如果 AI 被用于数据分析或方法学设计，必须在方法（Methods）部分详细说明所使用的 AI 模型及版本。",
+        "required_entities": ["JAMA", "Methods Section", "AI Model Version", "disclosure"],
+        "supporting_triples": [["JAMA", "requires_disclosure_in", "Methods Section"]]
+    },
+    {
+        "query_id": "Q010",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "PLOS 期刊对生成式 AI 编写的原始研究摘要（Abstract）持何种态度？",
+        "ground_truth_answer": "PLOS 通常不接受完全由 AI 生成的摘要，强调作者需要自己撰写并确保其反映了研究的真实成果。",
+        "required_entities": ["PLOS", "Abstract", "prohibit"],
+        "supporting_triples": [["PLOS", "restricts_AI_generation_of", "Abstract"]]
+    },
+    {
+        "query_id": "Q011",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "BMJ 对于在临床病例报告中使用 AI 有何隐私规定？",
+        "ground_truth_answer": "BMJ 严格禁止将包含患者隐私（PHI）的病例数据输入至外部非安全验证的 AI 模型中。",
+        "required_entities": ["BMJ", "Patient Privacy", "prohibit"],
+        "supporting_triples": [["BMJ", "protects", "Patient Privacy"]]
+    },
+    {
+        "query_id": "Q012",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "MDPI 是否允许在投稿信（Cover Letter）中使用 AI 辅助起草？",
+        "ground_truth_answer": "MDPI 允许使用 AI 辅助撰写投稿信等常规非核心学术内容，但核心研究内容的创新性必须由人类保障。",
+        "required_entities": ["MDPI", "Cover Letter", "allow"],
+        "supporting_triples": [["MDPI", "allows_AI_assistance_for", "Cover Letter"]]
+    },
+    {
+        "query_id": "Q013",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "Science 期刊对人工智能生成的视觉素材（如照片）的具体限制是什么？",
+        "ground_truth_answer": "Science 期刊禁止使用 AI 生成的照片或插图，除非这些图片本身就是关于 AI 研究的标的物并在图注中予以明确声明。",
+        "required_entities": ["Science", "Image Generation", "prohibit", "exception"],
+        "supporting_triples": [["Science", "prohibits", "Image Generation"]]
+    },
+    {
+        "query_id": "Q014",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "Nature Portfolio 是否要求在致谢（Acknowledgements）中列出大语言模型？",
+        "ground_truth_answer": "Nature Portfolio 要求在致谢或专门的 AI 使用声明部分明确列出所使用的大语言模型，而非将其列为作者。",
+        "required_entities": ["Nature Portfolio", "Acknowledgements", "disclosure"],
+        "supporting_triples": [["Nature Portfolio", "requires_disclosure_in", "Acknowledgements"]]
+    },
+    {
+        "query_id": "Q015",
+        "query_type": "Fact Retrieval",
+        "complexity": "Low",
+        "question": "Elsevier 政策中，作者若未按规定披露 AI 的使用，可能面临何种后果？",
+        "ground_truth_answer": "若作者隐瞒使用 AI，一经查实，可能被视为学术不端，面临拒稿或撤稿的风险。",
+        "required_entities": ["Elsevier", "undisclosed AI use", "retraction", "misconduct"],
+        "supporting_triples": [["Elsevier", "treats_undisclosed_AI_use_as", "Academic Misconduct"]]
+    },
+    {
+        "query_id": "Q016",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "如果一名作者在准备手稿时使用大语言模型润色了英语表达，根据 Springer 的政策，他必须执行哪些具体操作？",
+        "ground_truth_answer": "根据 Springer 政策，若作者使用大语言模型进行语言润色，必须在稿件的特定部分明确披露该工具的使用情况，并说明使用的目的，同时人类作者需对最终文本承担全责。",
+        "required_entities": ["Springer", "Language Editing", "disclosure", "accountability"],
+        "supporting_triples": [["Springer", "allows", "Language Editing"], ["Springer", "requires_disclosure_of", "AI Use"]]
+    },
+    {
+        "query_id": "Q017",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "审稿专家将未发表的稿件输入 ChatGPT 进行总结，此行为违反了 Taylor & Francis 的哪两项核心原则？",
+        "ground_truth_answer": "此行为违反了 Taylor & Francis 的保密性原则（Confidentiality）和潜在的数据隐私/知识产权保护原则，因为输入的数据可能被 AI 公司用于模型训练。",
+        "required_entities": ["Taylor & Francis", "ChatGPT", "Confidentiality", "Data Privacy"],
+        "supporting_triples": [["Peer Reviewer", "must_maintain", "Confidentiality"], ["Taylor & Francis", "prohibits", "Uploading Manuscript to AI"]]
+    },
+    {
+        "query_id": "Q018",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "为什么 Elsevier 允许使用 AI 改善语言质量，却禁止将其列为作者？",
+        "ground_truth_answer": "因为改善语言质量被视为辅助工具的使用，而作者身份（Authorship）不仅代表贡献，更代表对研究数据真实性和学术伦理的法律与道德问责制（Accountability），AI 缺乏承担此责任的主体资格。",
+        "required_entities": ["Elsevier", "Language Editing", "Authorship", "Accountability"],
+        "supporting_triples": [["Elsevier", "prohibits", "AI Authorship"], ["Human Author", "assumes", "Accountability"]]
+    },
+    {
+        "query_id": "Q019",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "在 IEEE 投稿时，若作者使用 AI 辅助推导了数学公式，必须满足哪些条件才能符合规范？",
+        "ground_truth_answer": "作者必须在文中详细披露 AI 模型的使用，且人类作者必须亲自验证公式推导的正确性并对其完全负责，禁止盲目依赖 AI 结果。",
+        "required_entities": ["IEEE", "Mathematical Formula", "Verification", "disclosure"],
+        "supporting_triples": [["IEEE", "requires", "Human Verification"], ["IEEE", "requires_disclosure_of", "AI Use"]]
+    },
+    {
+        "query_id": "Q020",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "若某医学数据集包含敏感临床图片，研究者欲使用 AI 工具进行图像增强，应遵循 COPE 的哪些指导原则？",
+        "ground_truth_answer": "研究者必须确保所使用的 AI 工具符合数据隐私法规，不能将包含患者可识别信息的敏感图片上传至未加密的公共 AI 平台，以防止违反患者隐私保护规定。",
+        "required_entities": ["COPE", "Clinical Images", "Patient Privacy", "Security"],
+        "supporting_triples": [["COPE", "mandates_protection_of", "Patient Privacy"]]
+    },
+    {
+        "query_id": "Q021",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "依据 ICMJE 规范，若最终发表的论文中发现由 AI 引入的伪造数据，谁将被追究责任？",
+        "ground_truth_answer": "论文的全体人类作者（特别是通讯作者）将被追究全部责任。ICMJE 规定作者有义务核实 AI 生成的所有输出。",
+        "required_entities": ["ICMJE", "Fabricated Data", "Human Author", "Accountability"],
+        "supporting_triples": [["ICMJE", "assigns_accountability_to", "Human Author"], ["Human Author", "must_verify", "AI Output"]]
+    },
+    {
+        "query_id": "Q022",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "SAGE 期刊作者在“致谢”部分声明使用 AI，能否免除其由于 AI 输出导致的抄袭（Plagiarism）指控？",
+        "ground_truth_answer": "不能。披露 AI 的使用仅满足透明度要求，但作者仍必须保证文本的原创性并对潜在的抄袭行为负全责。",
+        "required_entities": ["SAGE", "Disclosure", "Plagiarism", "Originality", "Accountability"],
+        "supporting_triples": [["SAGE", "requires", "Originality"], ["Disclosure", "does_not_absolve", "Accountability"]]
+    },
+    {
+        "query_id": "Q023",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "如果某作者使用 Midjourney 生成了一张显微镜下的细胞假想图并用于投稿 Nature，会面临什么判定？",
+        "ground_truth_answer": "该投稿大概率会被判定为违规并被拒稿。Nature 严禁使用生成式 AI 创建可能改变关键科研数据的图像，伪造实验结果属于严重的学术不端行为。",
+        "required_entities": ["Nature", "Midjourney", "Image Generation", "Fabrication"],
+        "supporting_triples": [["Nature", "prohibits", "Image Generation"], ["Image Generation", "linked_to", "Data Fabrication"]]
+    },
+    {
+        "query_id": "Q024",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "某作者使用 AI 生成代码以处理原始数据，根据常规出版政策，他在提交数据可用性声明（Data Availability Statement）时需要注意什么？",
+        "ground_truth_answer": "除了提供原始数据外，作者应当将用于数据处理的 AI 生成脚本和参数一并公开，以确保研究方法的可重复性（Reproducibility）。",
+        "required_entities": ["Data Availability", "Code Generation", "Reproducibility"],
+        "supporting_triples": [["Publisher", "requires", "Reproducibility"], ["AI Script", "supports", "Reproducibility"]]
+    },
+    {
+        "query_id": "Q025",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "为何出版商允许 AI 辅助文献检索，却要求严格审查由 AI 生成的参考文献列表？",
+        "ground_truth_answer": "因为 AI 模型存在产生“幻觉（Hallucinations）”的已知缺陷，容易生成看似合理但实际不存在的虚构参考文献（Fake Citations），作者必须人工逐一核实验证。",
+        "required_entities": ["Literature Review", "Fake Citations", "Hallucination", "Verification"],
+        "supporting_triples": [["Generative AI Tool", "causes", "Hallucination"], ["Human Author", "must_verify", "Citations"]]
+    },
+    {
+        "query_id": "Q026",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "在单盲同行评审体制下，若审稿人使用 AI 辅助撰写评审意见，可能对论文作者产生哪些非预期的负面影响？",
+        "ground_truth_answer": "若审稿人将手稿内容输入外部 AI，可能会破坏单盲评审的保密性，导致作者未发表的核心观点或研究成果遭到数据泄露或被第三方模型非法利用。",
+        "required_entities": ["Peer Reviewer", "Single-blind", "Data Leakage", "Confidentiality"],
+        "supporting_triples": [["Peer Reviewer", "breaches", "Confidentiality"], ["Uploading Manuscript to AI", "causes", "Data Leakage"]]
+    },
+    {
+        "query_id": "Q027",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "某机构作者政策规定“仅限于提高可读性”。如果作者利用 ChatGPT 生成了一段全新的讨论（Discussion）章节，该行为性质如何定性？",
+        "ground_truth_answer": "该行为将被定性为违规使用。生成实质性学术见解和分析超越了“语言润色和可读性提升”的范畴，侵犯了人类作者对核心知识体系的原创性要求。",
+        "required_entities": ["Readability", "Substantive Content", "Violation", "Discussion Section"],
+        "supporting_triples": [["Publisher", "restricts_AI_use_to", "Language Editing"], ["Discussion Section", "requires", "Original Human Thought"]]
+    },
+    {
+        "query_id": "Q028",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "如果论文被发现存在 AI 产生的刻板印象或偏见（Bias），根据伦理准则，谁应该承担主要道德责任？",
+        "ground_truth_answer": "通讯作者及全体共同作者应承担道德责任。尽管 AI 工具存在内在偏差，但作者有审查和纠正稿件中所有输出内容的伦理义务。",
+        "required_entities": ["Bias", "Ethics", "Corresponding Author", "Review Obligation"],
+        "supporting_triples": [["AI Tool", "exhibits", "Bias"], ["Human Author", "assumes_accountability_for", "Ethical Standards"]]
+    },
+    {
+        "query_id": "Q029",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "在跨学科研究中，若一作者使用图表生成软件（非大模型）作图，另一作者使用 DALL-E 优化插图，投稿 Elsevier 时需如何分别对待？",
+        "ground_truth_answer": "对于传统图表生成软件（基于确定性算法），作为常规工具说明即可；但对于 DALL-E（生成式大模型），Elsevier 政策严禁使用此类工具生成或修改研究图表，因此包含 DALL-E 插图的稿件将被要求撤换或面临拒稿。",
+        "required_entities": ["Elsevier", "DALL-E", "Generative AI", "Standard Software", "Image Generation"],
+        "supporting_triples": [["Elsevier", "prohibits", "Image Generation"]]
+    },
+    {
+        "query_id": "Q030",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "Wiley 强调保留知识产权转移的人类主体性。这意味着 AI 生成的文本在后续商业使用中可能面临何种法律风险？",
+        "ground_truth_answer": "由于 AI 生成的文本无法获得版权保护，若论文中包含大量未经实质人类修改的 AI 生成段落，该部分的版权可能处于公共领域状态，从而使出版商难以主张独占性商业分发权。",
+        "required_entities": ["Wiley", "Intellectual Property", "Copyright Transfer", "Public Domain"],
+        "supporting_triples": [["Wiley", "denies_copyright_for", "AI Tool"]]
+    },
+    {
+        "query_id": "Q031",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "按照通常的编辑规定，执行主编若发现提交稿件的查重系统（如 iThenticate）同时报出极高的 AI 生成概率，首先应采取何种程序？",
+        "ground_truth_answer": "主编通常会先联系通讯作者，要求其就 AI 检测结果提供说明和证据（如原始手稿草稿），在未经过人工核实验证之前，不应仅凭 AI 检测工具的自动结果直接作拒稿处理。",
+        "required_entities": ["Editor", "AI Detection", "Investigation", "Corresponding Author"],
+        "supporting_triples": [["Editor", "initiates_investigation_with", "Human Author"]]
+    },
+    {
+        "query_id": "Q032",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "一篇关于临床医学的论文使用大语言模型进行翻译，为确保符合学术要求，翻译后必须经过何种关键步骤？",
+        "ground_truth_answer": "翻译后必须由具备专业医学背景的母语者或高水平人类研究人员进行细致的校验（Verification），以确保专业术语的准确性，避免可能危及临床安全性的翻译错误。",
+        "required_entities": ["Clinical Medicine", "Translation", "Verification", "Accuracy"],
+        "supporting_triples": [["Human Author", "must_verify", "Translation Accuracy"]]
+    },
+    {
+        "query_id": "Q033",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "出版商对于作者在文章中声明“无利益冲突（No Conflict of Interest）”时，若使用了商业化 AI 赞助的账号服务，应当如何处理？",
+        "ground_truth_answer": "严格的伦理政策要求，若商业 AI 提供方的赞助对研究设计或写作产生了实质性影响，除了披露 AI 工具使用外，还应在利益冲突声明章节披露该企业资助背景，以维护透明度。",
+        "required_entities": ["Conflict of Interest", "Sponsorship", "Transparency"],
+        "supporting_triples": [["Ethics", "demands", "Transparency"]]
+    },
+    {
+        "query_id": "Q034",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "若模型开发人员提交了一篇关于新型医学大模型算法架构的论文，政策是否允许他们在附录中展示由该模型生成的虚构病例数据？",
+        "ground_truth_answer": "允许。作为研究本身标的物（Object of Research）的输出展示属于出版政策的豁免情形，但必须明确标记这些病例属于算法演示的虚构数据，以区别于真实的医学研究数据。",
+        "required_entities": ["Algorithm Design", "Synthetic Data", "Object of Research", "Exception"],
+        "supporting_triples": [["Publisher", "allows_AI_generation_if", "Object of Research"]]
+    },
+    {
+        "query_id": "Q035",
+        "query_type": "Multi-hop Reasoning",
+        "complexity": "Medium",
+        "question": "某期刊允许非英语母语作者使用 AI。如果系统检测出其行文具有典型的“机器特征”，评审者应基于什么标准评判文章的接受与否？",
+        "ground_truth_answer": "评审者应仅基于研究的科学有效性、数据原创性和逻辑推导进行评判。若作者已按要求披露，且研究内容扎实，单纯的机器写作风格不应作为拒稿理由。",
+        "required_entities": ["Scientific Validity", "Writing Style", "Disclosure", "Acceptance Criteria"],
+        "supporting_triples": [["Peer Reviewer", "evaluates_based_on", "Scientific Validity"]]
+    },
+    {
+        "query_id": "Q036",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "在对待 AI 生成图像的态度上，Science 与 Elsevier 的政策有何主要差异与共识？",
+        "ground_truth_answer": "共识：两者均严禁使用 AI 生成或修改原始科研数据图像。差异：Science 的政策更为严厉，几乎全面禁止在无授权下包含任何 AI 视觉元素；Elsevier 则在严格限制图表数据的同时，可能在极其限定的非关键插图或图形摘要设计上留有审批余地（需视具体期刊细则）。",
+        "required_entities": ["Science", "Elsevier", "Image Generation", "prohibit"],
+        "supporting_triples": [["Science", "prohibits", "Image Generation"], ["Elsevier", "prohibits", "Image Generation"]]
+    },
+    {
+        "query_id": "Q037",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "列举目前主流学术出版机构（如 IEEE, SAGE, Elsevier）在生成式 AI 使用上的两项绝对共识。",
+        "ground_truth_answer": "两项绝对共识为：1. 严禁赋予 AI 作者身份（AI Authorship is prohibited）；2. 人类作者需对文稿的所有内容（包括 AI 生成部分）的准确性、完整性和原创性承担终极问责制（Human accountability）。",
+        "required_entities": ["IEEE", "SAGE", "Elsevier", "AI Authorship", "prohibit", "Accountability"],
+        "supporting_triples": [["Elsevier", "prohibits", "AI Authorship"], ["IEEE", "assigns_accountability_to", "Human Author"]]
+    },
+    {
+        "query_id": "Q038",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "关于 AI 在同行评审环节的使用，COPE 与普通作者指南中的态度存在何种区别的着眼点？",
+        "ground_truth_answer": "作者指南侧重规范 AI 的生成性使用以防止抄袭和造假；而 COPE 针对审稿人的政策则着眼于防范数据输入侧的风险，即严防由于手稿上传导致保密性缺失和知识产权外泄问题。",
+        "required_entities": ["COPE", "Author Guidelines", "Peer Review", "Confidentiality", "Data Leakage"],
+        "supporting_triples": [["COPE", "emphasizes", "Confidentiality"], ["Publisher", "regulates", "Generative Output"]]
+    },
+    {
+        "query_id": "Q039",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "对比传统的拼写检查软件（如 Grammarly）与大语言模型（如 GPT-4），为何出版商仅要求对后者进行显式披露？",
+        "ground_truth_answer": "传统的拼写检查基于固定规则操作，不会引入新颖的思想或改变原意；而大语言模型具有创造性特征，能生成实质性的新文本和逻辑重构，因此为确保学术成果的原创性来源透明，仅要求对生成式大模型进行披露。",
+        "required_entities": ["Spell Checker", "GPT-4", "Creativity", "Substantive Change", "Transparency"],
+        "supporting_triples": [["Generative AI Tool", "alters", "Substantive Content"], ["Publisher", "requires_disclosure_of", "Generative AI Tool"]]
+    },
+    {
+        "query_id": "Q040",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "在对待学术诚信问题上，使用 AI 生成引用的虚构文献与人工伪造数据的判定基准是否相同？",
+        "ground_truth_answer": "判定基准相同。无论是由人类主观捏造，还是由于疏忽导致未能核实 AI 产生的“幻觉”虚构文献，均违反了追求真理的核心科学准则，在出版政策中统一按照最高等级的学术不端和欺诈行为处理。",
+        "required_entities": ["Fake Citations", "Data Fabrication", "Academic Misconduct", "Equivalence"],
+        "supporting_triples": [["Fake Citations", "classified_as", "Academic Misconduct"]]
+    },
+    {
+        "query_id": "Q041",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "分析医学领域的 ICMJE 指南与通用计算机领域的 IEEE 准则在对待 AI 披露精度上的侧重点异同。",
+        "ground_truth_answer": "异同点在于：两者均坚持全面披露。但 ICMJE 因涉及公共健康安全，更侧重于评估 AI 对临床数据的解释和偏差风险的防范；而 IEEE 则额外关注由 AI 辅助生成的代码或算法架构的可验证性与开源说明。",
+        "required_entities": ["ICMJE", "IEEE", "Clinical Risk", "Code Verifiability", "Disclosure"],
+        "supporting_triples": [["ICMJE", "focuses_on", "Clinical Safety"], ["IEEE", "focuses_on", "Code Verifiability"]]
+    },
+    {
+        "query_id": "Q042",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "比较作者在使用内部部署（On-premise）的离线大模型与在线公共 ChatGPT 模型时，出版政策在数据保护层面的适用性差异。",
+        "ground_truth_answer": "对于离线私有模型，由于不存在数据上传到第三方服务器的环节，保密性和数据泄露的政策限制可被豁免；但涉及 AI 署名禁止、最终责任归属以及原创性披露的核心政策，两者适用同样的严格标准。",
+        "required_entities": ["On-premise Model", "ChatGPT", "Data Leakage", "Policy Applicability"],
+        "supporting_triples": [["On-premise Model", "prevents", "Data Leakage"], ["Generative AI Tool", "requires", "Disclosure"]]
+    },
+    {
+        "query_id": "Q043",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "针对论文不同组成部分（摘要、方法、结果、致谢），出版机构施加的 AI 监管力度呈现怎样的梯度差异？",
+        "ground_truth_answer": "监管力度呈高度梯度变化：对“结果（Results）”和“数据可视化”呈现最严厉的禁止态度，以防科研造假；对“摘要（Abstract）”持严格审慎态度；对“方法（Methods）”要求详细的技术说明与披露；而对“致谢（Acknowledgements）”仅作为披露其应用场景的位置。",
+        "required_entities": ["Results", "Methods", "Acknowledgements", "Regulatory Gradient"],
+        "supporting_triples": [["Results Section", "has_highest_restriction_on", "AI Use"]]
+    },
+    {
+        "query_id": "Q044",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "结合现存条文，对比如果由于数据错误导致撤稿，拥有多个联合人类作者的稿件与单一作者严重依赖 AI 写作的稿件，责任判定程序的区别。",
+        "ground_truth_answer": "在多人协作中，责任通常分散至提供具体数据的联合撰写人，通讯作者负总责；在过度依赖 AI 的单作者情形中，单一作者将因为缺乏对辅助生成内容的合理尽职调查（Due Diligence）直接承担全部且绝对的过失责任，无法将过错转嫁于机器。",
+        "required_entities": ["Co-authors", "Single Author", "Due Diligence", "Liability Transfer"],
+        "supporting_triples": [["Human Author", "cannot_transfer_liability_to", "AI Tool"]]
+    },
+    {
+        "query_id": "Q045",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "相较于传统的抄袭检测工具（iThenticate），为何主流出版商尚未广泛采纳并强制实施完全基于 AI 写作概率的硬性拒稿标准？",
+        "ground_truth_answer": "因为现有基于特征匹配的抄袭检测技术相对成熟准确；而目前检测生成式 AI 的工具存在较高的假阳性率（尤其是针对非母语撰写的生硬语句），盲目执行硬性拦截可能导致不公平审评，故仅作为人工介入调查的参考指标。",
+        "required_entities": ["Plagiarism Detection", "AI Detection", "False Positive Rate", "Editorial Judgment"],
+        "supporting_triples": [["AI Detection Tool", "produces", "False Positives"]]
+    },
+    {
+        "query_id": "Q046",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "在关于 AI 对实验方法指导的政策上，临床试验注册（如 PRISMA）与基础计算机科学论文报告之间存在何种颗粒度区别？",
+        "ground_truth_answer": "临床试验类论文需要强制且极端细致的披露（具体到使用的提示词和版本号，甚至模型超参数）以防范对患者群体的系统性伦理伤害；计算机科学则偏向整体算法架构及数据集构建层面的解释，相对容忍宏观层面的代码优化使用。",
+        "required_entities": ["Clinical Trials", "Computer Science", "Granularity of Disclosure"],
+        "supporting_triples": [["Clinical Trials", "require", "Detailed Prompt Disclosure"]]
+    },
+    {
+        "query_id": "Q047",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "从演化视角看，2022年 ChatGPT 刚出现时部分出版机构的“全面禁止”政策与2024年当下的政策在对待 AI 的观念上发生了怎样的转变？",
+        "ground_truth_answer": "发生了从“抵制性防御”到“限制性融合”的范式转变。早期防范工具带来的不确定性和版权争议，当下政策转为承认 AI 提升学术生产效率的正面价值（特别是解决语言屏障），随即将监管重心从“禁用工具”转向强调“责任确权和过程透明”。",
+        "required_entities": ["Policy Evolution", "Paradigm Shift", "Integration", "Transparency"],
+        "supporting_triples": [["Publishing Policy", "shifted_towards", "Transparency"]]
+    },
+    {
+        "query_id": "Q048",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "比较开放获取（Open Access, CC-BY 协议）期刊与传统订阅制期刊在应对 AI 获取语料用于再训练时的政策防御差异。",
+        "ground_truth_answer": "OA期刊因遵循 CC-BY 允许更广泛的再利用，通常在法律层面较难拦截 AI 公司进行批量爬取和再训练；而传统订阅制期刊凭借受限的版权转移协议，具有更为明确的法律手段（如发出版权律师函或设定严格的 TDM 文本数据挖掘条款）来实施防御。",
+        "required_entities": ["Open Access", "Subscription Journal", "Text and Data Mining", "Copyright"],
+        "supporting_triples": [["Subscription Journal", "restricts", "Text and Data Mining"]]
+    },
+    {
+        "query_id": "Q049",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "对比人类作者署名争议与 AI 工具的贡献界定，出版道德委员会（COPE）所持的裁决逻辑有何根本不同？",
+        "ground_truth_answer": "对人类争议，COPE 遵循根据实际贡献比例（如通过 CRediT 贡献者分类体系）调解权利的主张分配；对于 AI，裁决逻辑则是彻底的一刀切剥夺（Blanket Deprivation），任何实质生成的内容其权利和责任均由指令下达者或数据核实者（人类）接管。",
+        "required_entities": ["COPE", "Human Authorship Dispute", "Blanket Deprivation", "CRediT"],
+        "supporting_triples": [["COPE", "resolves_disputes_via", "CRediT Taxonomy"]]
+    },
+    {
+        "query_id": "Q050",
+        "query_type": "Comparative Analysis",
+        "complexity": "High",
+        "question": "当作者使用 AI 工具辅助综述文章（Review Article）与辅助原始研究文章（Original Research Article）时，期刊编辑组在审核其文献引用质量时的侧重考量点有何差异？",
+        "ground_truth_answer": "在综述文章中，由于核心价值依赖于广泛而确凿的文献综合，审查将极端关注是否存在 AI 幻觉导致的伪造引用及代表性偏误；原始研究中，文献审查更多考证背景设定的合理性，重点审查转向对所获取首手实验数据的不可篡改性。",
+        "required_entities": ["Review Article", "Original Research", "Citation Hallucination", "Data Integrity"],
+        "supporting_triples": [["Review Article", "vulnerable_to", "Citation Hallucination"]]
+    }
+]
